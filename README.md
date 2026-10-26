@@ -41,28 +41,16 @@ s.n. dasgupta
 ```
 ### Display the content of the files
 cat < file1
-## OUTPUT
-
-
-
 cat < file2
-## OUTPUT
-
-
 # Comparing Files
 cmp file1 file2
-## OUTPUT
- 
 comm file1 file2
- ## OUTPUT
-
- 
 diff file1 file2
 ## OUTPUT
+<img width="1558" height="862" alt="Screenshot 2026-10-25 103644" src="https://github.com/user-attachments/assets/63af08c6-220b-454c-9ee2-3ed0930381ed" />
 
 
 #Filters
-
 ### Create the following files file11, file22 as follows:
 
 cat > file11
@@ -78,23 +66,9 @@ cat > file22
 1003 | Joe |  7000 | Developer
 ^d
 ```
-
-
 cut -c1-3 file11
-## OUTPUT
-
-
-
-
 cut -d "|" -f 1 file22
-## OUTPUT
-
-
-
 cut -d "|" -f 2 file22
-## OUTPUT
-
-
 cat < newfile 
 ```
 Hello world
@@ -104,44 +78,19 @@ hello world
 cat > newfile 
 Hello world
 hello world
- 
 grep Hello newfile 
-## OUTPUT
-
-
-
 grep hello newfile 
-## OUTPUT
-
-
-
-
 grep -v hello newfile 
-## OUTPUT
-
-
-
 cat newfile | grep -i "hello"
-## OUTPUT
-
-
-
-
 cat newfile | grep -i -c "hello"
-## OUTPUT
-
-
-
-
 grep -R ubuntu /etc
 ## OUTPUT
+
+<img width="1563" height="862" alt="Screenshot 2026-10-25 103708" src="https://github.com/user-attachments/assets/0f60188f-5d33-4c6c-8d8f-8aa3a2e63925" />
 
 
 
 grep -w -n world newfile   
-## OUTPUT
-
-
 cat < newfile 
 ```
 Hello world
@@ -162,60 +111,19 @@ Linux is best in this World
 ^d
  ```
 egrep -w 'Hello|hello' newfile 
-## OUTPUT
-
-
-
 egrep -w '(H|h)ello' newfile 
-## OUTPUT
-
-
-
 egrep -w '(H|h)ell[a-z]' newfile 
-## OUTPUT
-
-
-
-
 egrep '(^hello)' newfile 
-## OUTPUT
-
-
-
 egrep '(world$)' newfile 
-## OUTPUT
-
-
-
 egrep '(World$)' newfile 
-## OUTPUT
-
-
 egrep '((W|w)orld$)' newfile 
-## OUTPUT
-
-
-
 egrep '[1-9]' newfile 
-## OUTPUT
-
-
-
 egrep 'Linux.*world' newfile 
-## OUTPUT
-
-
 egrep 'Linux.*World' newfile 
-## OUTPUT
-
-
 egrep l{2} newfile
-## OUTPUT
-
-
-
 egrep 's{1,2}' newfile
 ## OUTPUT 
+<img width="1562" height="815" alt="Screenshot 2026-10-25 103742" src="https://github.com/user-attachments/assets/fbcf885c-52d3-430d-8d69-238821a9a462" />
 
 
 cat > file23
@@ -231,83 +139,22 @@ cat > file23
 ^d
 ```
 
-
 sed -n -e '3p' file23
-## OUTPUT
-
-
-
 sed -n -e '$p' file23
-## OUTPUT
-
-
-
 sed  -e 's/Ram/Sita/' file23
-## OUTPUT
-
-
-
 sed  -e '2s/Ram/Sita/' file23
-## OUTPUT
-
-
-
 sed  '/tom/s/5000/6000/' file23
-## OUTPUT
-
-
-
 sed -n -e '1,5p' file23
-## OUTPUT
-
-
-
 sed -n -e '2,/Joe/p' file23
-## OUTPUT
-
-
-
-
 sed -n -e '/tom/,/Joe/p' file23
-## OUTPUT
-
-
-
 seq 10 
-## OUTPUT
-
-
-
 seq 10 | sed -n '4,6p'
-## OUTPUT
-
-
-
 seq 10 | sed -n '2,~4p'
-## OUTPUT
-
-
-
 seq 3 | sed '2a hello'
-## OUTPUT
-
-
-
 seq 2 | sed '2i hello'
-## OUTPUT
-
-
 seq 10 | sed '2,9c hello'
 ## OUTPUT
-
-
-sed -n '2,4{s/^/$/;p}' file23
-## OUTPUT
-
-
-
-sed -n '2,4{s/$/*/;p}' file23
-
+<img width="1564" height="688" alt="Screenshot 2026-10-25 103815" src="https://github.com/user-attachments/assets/dab25e20-0ef3-45b3-a88c-f50c3bdda6b7" />
 
 #Sorting File content
 cat > file21
@@ -319,9 +166,6 @@ cat > file21
 1004 | Sit |  7000 | Dev
 ``` 
 sort file21
-## OUTPUT
-
-
 cat > file22
 ```
 1001 | Ram | 10000 | HR
@@ -332,15 +176,8 @@ cat > file22
 1004 | Sit |  7000 | Dev
 ``` 
 uniq file22
-## OUTPUT
-
-
-
 #Using tr command
-
 cat file23 | tr [:lower:] [:upper:]
- ## OUTPUT
-
 cat < urllist.txt
 ```
 www. yahoo. com
@@ -354,41 +191,30 @@ www. yahoo. com
 www. google. com
 www. mrcet.... com
  ```
-cat urllist.txt | tr -d ' '
- ## OUTPUT
-
-
- 
+cat urllist.txt | tr -d ' ' 
 cat urllist.txt | tr -d ' ' | tr -s '.'
 ## OUTPUT
 
+<img width="1569" height="717" alt="Screenshot 2026-10-25 103831" src="https://github.com/user-attachments/assets/8ce898a9-866f-4936-842c-bb353e674b57" />
 
 
 #Backup commands
 tar -cvf backup.tar *
-## OUTPUT
-
-
 mkdir backupdir
- 
 mv backup.tar backupdir
-
 cd backupdir
- 
 tar -tvf backup.tar
 ## OUTPUT
 
+<img width="1567" height="818" alt="Screenshot 2026-10-25 103842" src="https://github.com/user-attachments/assets/a1830d0a-c824-4ba3-9dac-56cdd4376b38" />
+
 
 tar -xvf backup.tar
-## OUTPUT
-
 gzip backup.tar
-
-ls .gz
-## OUTPUT
- 
+ls .gz 
 gunzip backup.tar.gz
 ## OUTPUT
+<img width="1572" height="684" alt="Screenshot 2026-10-25 103905" src="https://github.com/user-attachments/assets/01e28574-e618-4c97-a2f2-d1b73e5c6646" />
 
  
 # Shell Script
